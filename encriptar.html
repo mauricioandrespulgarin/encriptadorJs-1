@@ -4,8 +4,32 @@
   <title>Encriptación y desencriptación</title>
 </head>
 <body>
+  <input type="text" id="inputText" placeholder="Ingrese el mensaje">
+  <button onclick="encryptAndDecrypt()">Resolver</button>
+  <label id="resultLabel"></label>
+
   <script>
-    // Algoritmo de encriptación básico en js
+    // Aquí colocarás tu código JavaScript
+
+    function encryptAndDecrypt() {
+      // Obtén el valor del mensaje y la clave ingresados por el usuario
+      var message = document.getElementById("inputText").value;
+      var key = 5;
+
+      // Encripta el mensaje
+      var encryptedMessage = encrypt(message, key);
+
+      // Desencripta el mensaje
+      var decryptedMessage = decrypt(encryptedMessage, key);
+
+      // Muestra el resultado en el label
+      var resultLabel = document.getElementById("resultLabel");
+      resultLabel.innerHTML = "<br>" + "Mensaje original: " + message + "<br>" +
+                              "Mensaje encriptado: " + encryptedMessage + "<br>" +
+                              "Mensaje desencriptado: " + decryptedMessage;
+    }
+
+    // Algoritmo de encriptación
     function encrypt(message, key) {
       var encryptedMessage = "";
       for (var i = 0; i < message.length; i++) {
@@ -24,17 +48,6 @@
       }
       return decryptedMessage;
     }
-
-    // Ejemplo de uso
-    var message = "mapa12345";
-    var key = 5;
-
-    var encryptedMessage = encrypt(message, key);
-    var decryptedMessage = decrypt(encryptedMessage, key);
-
-    console.log("Mensaje original: " + message);
-    console.log("Mensaje encriptado: " + encryptedMessage);
-    console.log("Mensaje desencriptado: " + decryptedMessage);
   </script>
 </body>
 </html>
