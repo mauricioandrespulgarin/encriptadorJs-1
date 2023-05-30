@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Encriptación y desencriptación</title>
+</head>
+<body>
+  <script>
+    // Algoritmo de encriptación básico en js
+    function encrypt(message, key) {
+      var encryptedMessage = "";
+      for (var i = 0; i < message.length; i++) {
+        var charCode = message.charCodeAt(i);
+        encryptedMessage += String.fromCharCode(charCode + key);
+      }
+      return encryptedMessage;
+    }
+
+    // Algoritmo de desencriptación
+    function decrypt(encryptedMessage, key) {
+      var decryptedMessage = "";
+      for (var i = 0; i < encryptedMessage.length; i++) {
+        var charCode = encryptedMessage.charCodeAt(i);
+        decryptedMessage += String.fromCharCode(charCode - key);
+      }
+      return decryptedMessage;
+    }
+
+    // Ejemplo de uso
+    var message = "mapa12345";
+    var key = 5;
+
+    var encryptedMessage = encrypt(message, key);
+    var decryptedMessage = decrypt(encryptedMessage, key);
+
+    console.log("Mensaje original: " + message);
+    console.log("Mensaje encriptado: " + encryptedMessage);
+    console.log("Mensaje desencriptado: " + decryptedMessage);
+  </script>
+</body>
+</html>
