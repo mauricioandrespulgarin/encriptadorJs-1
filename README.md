@@ -1,4 +1,3 @@
-# encriptador1-js
-## encriptador en JS
+# Encriptador en JS
 
-<a href="https://mauricioandrespulgarin.github.io/encriptador1-js/">Visualiza 
+<a href="https://mauricioandrespulgarin.github.io/encriptadorJs-1/">Visualiza 
